@@ -1,0 +1,124 @@
+creating database:
+
+create database banking;
+
+==========================================================================================================================================
+for showing tables:
+
+show tables;
+===========================================================================================================================================
+creating an account table:
+
+use banking;
+CREATE TABLE `banking`.`account`(
+  `id` int NOT NULL AUTO_INCREMENT,
+  `accno` bigint,
+  `balance` int,
+  `username` VARCHAR(255),
+  `user_id` int,
+  PRIMARY KEY (`id`)
+);
+
+select * from account;
+
+============================================================================================================================================
+creating a chequebook request:
+
+use banking;
+
+CREATE TABLE `banking`.`chequebook_request`(
+  `id` int NOT NULL AUTO_INCREMENT,
+  `acc_type` varchar(255),
+  `account` bigint,
+  `date` date,
+  `no_of_pages` int,
+  `request_status` bit(1),
+  PRIMARY KEY (`id`)
+);
+
+select * from accountchequebook_request;
+==============================================================================================================================================
+creating a loan:
+
+use banking;
+
+CREATE TABLE `banking`.`loan`(
+  `id` int NOT NULL AUTO_INCREMENT,
+  `account_number` varchar(255),
+  `loan_amount` varchar(255),
+  `date` date,
+  `loan_type` varchar(255),
+  `status` varchar(255),
+  PRIMARY KEY (`id`)
+);
+
+select * from loan;
+
+=============================================================================================================================================
+creating a saccount:
+
+use banking;
+
+CREATE TABLE `banking`.`saccount`(
+  `id` int NOT NULL AUTO_INCREMENT,
+  `accno` bigint,
+  `balance` int,
+  `username` varchar(255),
+  `varchar` int
+  PRIMARY KEY (`id`)
+);
+
+select * from saccount;
+==============================================================================================================================================
+creating a transfer:
+
+use banking;
+
+CREATE TABLE `banking`.`transfer`(
+  `id` int NOT NULL AUTO_INCREMENT,
+  `amount` int,
+  `date` date,
+  `raccount` bigint,
+  `saccount` bigint
+  PRIMARY KEY (`id`)
+);
+
+select * from transfer;
+===============================================================================================================================================
+creating a user_history:
+
+use banking;
+
+CREATE TABLE `banking`.`user_history`(
+  `id` int NOT NULL AUTO_INCREMENT,
+  `account` bigint,
+  `action` varchar(255),
+  `date` date,
+  PRIMARY KEY (`id`)
+);
+
+select * from user_history;
+==============================================================================================================================================
+creating a user:
+
+use banking;
+
+CREATE TABLE `banking`.`user`(
+  `id` int NOT NULL AUTO_INCREMENT,
+  `address` varchar(255),
+  `authorization_status` tinyint,
+  `dob` date, 
+  `email` varchar(255), 
+  `feature_status` int ,
+  `fname` varchar(255), 
+  `identity` varchar(255), 
+  `identity_type` varchar(255), 
+  `lname` varchar(255), 
+  `password` varchar(255), 
+  `phone` bigint, 
+  `status` tinyint(1), 
+  `username` varchar(255),
+  PRIMARY KEY (`id`)
+);
+
+select * from user;
